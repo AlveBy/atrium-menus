@@ -29,4 +29,10 @@ return [
         'source_none' => '不展开',
         'source_depth' => '展开层数',
     ],
+    'actions' => [
+        'add_to_header' => '添加到顶部菜单',
+        'no_header' => '网站没有适用于所有语言的顶部菜单。请创建代码为“header”的菜单。',
+        'already' => '“:title”已在顶部菜单中。',
+        'added' => '已将“:title”添加到顶部菜单末尾。',
+    ],
 ];

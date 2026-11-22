@@ -29,4 +29,10 @@ return [
         'source_none' => 'Nic',
         'source_depth' => 'Poziomy do rozwinięcia',
     ],
+    'actions' => [
+        'add_to_header' => 'Dodaj do górnego menu',
+        'no_header' => 'Strona nie ma górnego menu dla wszystkich języków. Utwórz menu z kodem „header”.',
+        'already' => '„:title” jest już w górnym menu.',
+        'added' => '„:title” dodano na koniec górnego menu.',
+    ],
 ];

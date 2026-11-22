@@ -29,4 +29,10 @@ return [
         'source_none' => 'Rien',
         'source_depth' => 'Niveaux à déplier',
     ],
+    'actions' => [
+        'add_to_header' => 'Ajouter au menu d’en-tête',
+        'no_header' => 'Le site n’a pas de menu d’en-tête pour toutes les langues. Créez un menu avec le code « header ».',
+        'already' => '« :title » est déjà dans le menu d’en-tête.',
+        'added' => '« :title » est ajouté à la fin du menu d’en-tête.',
+    ],
 ];

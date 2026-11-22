@@ -13,6 +13,7 @@ use Atrium\Menus\Tests\Fixtures\Article;
 use Atrium\Menus\Tests\TestCase;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Cache;
+use Inertia\Testing\AssertableInertia;
 use InvalidArgumentException;
 
 /**
@@ -33,6 +34,8 @@ final class NotInstalledTest extends TestCase
         Article::query()->create(['name' => 'Delivery', 'code' => 'delivery']);
 
         $this->actingAs($this->admin(), 'admin')->get('/admin/menus')->assertNotFound();
+        // Other modules get no "Add to header menu" button either.
+        $this->get('/admin/articles')->assertOk()->assertInertia(fn (AssertableInertia $page) => $page->where('actions', []));
         $this->assertNull(config('atrium-theme.header_menu'));
         $this->get('/articles')->assertOk()->assertSee('<nav class="menu" aria-label="Main menu">', false);
     }

@@ -29,4 +29,10 @@ return [
         'source_none' => 'Nichts',
         'source_depth' => 'Aufzuklappende Ebenen',
     ],
+    'actions' => [
+        'add_to_header' => 'Zum Kopfmenü hinzufügen',
+        'no_header' => 'Die Website hat kein Kopfmenü für alle Sprachen. Legen Sie ein Menü mit dem Code „header“ an.',
+        'already' => '„:title“ ist bereits im Kopfmenü.',
+        'added' => '„:title“ wurde ans Ende des Kopfmenüs gesetzt.',
+    ],
 ];

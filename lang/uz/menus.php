@@ -29,4 +29,10 @@ return [
         'source_none' => 'Hech narsa',
         'source_depth' => 'Ochiladigan darajalar soni',
     ],
+    'actions' => [
+        'add_to_header' => 'Yuqori menyuga qo\'shish',
+        'no_header' => 'Saytda barcha tillar uchun yuqori menyu yo\'q. «header» kodli menyu yarating.',
+        'already' => '«:title» allaqachon yuqori menyuda bor.',
+        'added' => '«:title» yuqori menyu oxiriga qo\'shildi.',
+    ],
 ];

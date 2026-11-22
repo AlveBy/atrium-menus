@@ -29,4 +29,10 @@ return [
         'source_none' => 'Nothing',
         'source_depth' => 'Levels to unfold',
     ],
+    'actions' => [
+        'add_to_header' => 'Add to header menu',
+        'no_header' => 'The site has no header menu for all languages. Create a menu with the code “header”.',
+        'already' => '“:title” is already in the header menu.',
+        'added' => '“:title” is added to the end of the header menu.',
+    ],
 ];

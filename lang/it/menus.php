@@ -29,4 +29,10 @@ return [
         'source_none' => 'Niente',
         'source_depth' => 'Livelli da espandere',
     ],
+    'actions' => [
+        'add_to_header' => 'Aggiungi al menu principale',
+        'no_header' => 'Il sito non ha un menu principale per tutte le lingue. Crea un menu con il codice «header».',
+        'already' => '«:title» è già nel menu principale.',
+        'added' => '«:title» è stato aggiunto in fondo al menu principale.',
+    ],
 ];

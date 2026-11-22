@@ -9,7 +9,10 @@ declare(strict_types=1);
 
 namespace Atrium\Menus;
 
+use Atrium\Admin\Facades\Hook;
 use Atrium\Admin\Modules\Modules;
+use Atrium\Admin\Support\RecordUrls;
+use Atrium\Menus\Actions\AddToHeaderMenu;
 use Atrium\Menus\View\Components\Menu;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
@@ -60,6 +63,18 @@ final class MenusServiceProvider extends ServiceProvider
         if (config('atrium-theme.footer_menu') === null) {
             config()->set('atrium-theme.footer_menu', 'atrium-menus::theme.footer');
         }
+
+        // Any record with a page on the site can go to the header menu from
+        // its own list and form. The button needs the right to edit menus.
+        Hook::filter('atrium.module.actions', function (array $actions, string $model): array {
+            if (! $this->app->make(RecordUrls::class)->hasPages($model)) {
+                return $actions;
+            }
+
+            return [...$actions, AddToHeaderMenu::make('add-to-header-menu')
+                ->label(__('atrium-menus::menus.actions.add_to_header'))
+                ->permission('menus.update')];
+        });
 
         $flush = function (string $event, array $payload): void {
             $record = $payload[0] ?? null;

@@ -29,4 +29,10 @@ return [
         'source_none' => 'Nada',
         'source_depth' => 'Níveis a expandir',
     ],
+    'actions' => [
+        'add_to_header' => 'Adicionar ao menu do topo',
+        'no_header' => 'O site não tem menu do topo para todos os idiomas. Crie um menu com o código “header”.',
+        'already' => '“:title” já está no menu do topo.',
+        'added' => '“:title” foi adicionado ao fim do menu do topo.',
+    ],
 ];

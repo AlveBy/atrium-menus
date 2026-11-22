@@ -400,7 +400,9 @@ final class ResolveTest extends TestCase
         $this->menu('header', [$this->item('Shop', '/shop', [], ['source' => Ghost::class])]);
 
         try {
-            $this->resolve('header', '/', 'de');
+            // In a savepoint: on PostgreSQL the failed query would abort the
+            // test's transaction, and the rollback of the migrations after it.
+            DB::transaction(fn () => $this->resolve('header', '/', 'de'));
             $this->fail('The menu could not be built without the table.');
         } catch (QueryException) {
             $this->assertSame('en', $this->app->getLocale());

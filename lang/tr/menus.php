@@ -29,4 +29,10 @@ return [
         'source_none' => 'Hiçbiri',
         'source_depth' => 'Açılacak düzey sayısı',
     ],
+    'actions' => [
+        'add_to_header' => 'Üst menüye ekle',
+        'no_header' => 'Sitede tüm diller için bir üst menü yok. “header” kodlu bir menü oluşturun.',
+        'already' => '“:title” zaten üst menüde.',
+        'added' => '“:title” üst menünün sonuna eklendi.',
+    ],
 ];

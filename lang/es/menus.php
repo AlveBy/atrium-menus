@@ -29,4 +29,10 @@ return [
         'source_none' => 'Nada',
         'source_depth' => 'Niveles que desplegar',
     ],
+    'actions' => [
+        'add_to_header' => 'Añadir al menú superior',
+        'no_header' => 'El sitio no tiene menú superior para todos los idiomas. Cree un menú con el código «header».',
+        'already' => '«:title» ya está en el menú superior.',
+        'added' => '«:title» se ha añadido al final del menú superior.',
+    ],
 ];
