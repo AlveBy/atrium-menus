@@ -9,7 +9,9 @@ declare(strict_types=1);
 
 namespace Atrium\Menus\Tests\Feature;
 
+use Atrium\Admin\History\Trash;
 use Atrium\Admin\Models\Language;
+use Atrium\Admin\Models\TrashedRecord;
 use Atrium\Menus\Models\Menu;
 use Atrium\Menus\Models\MenuItem;
 use Atrium\Menus\Tests\Fixtures\Article;
@@ -114,6 +116,9 @@ final class AdminTest extends TestCase
         $this->assertSame(4, MenuItem::query()->count());
 
         $this->delete("/admin/menus/{$menu->id}")->assertRedirect(route('admin.menus.index'));
+        $this->assertSame(4, MenuItem::query()->count(), 'A menu in the trash keeps its items.');
+
+        app(Trash::class)->purge(TrashedRecord::query()->sole());
         $this->assertSame(0, MenuItem::query()->count());
     }
 
