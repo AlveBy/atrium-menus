@@ -35,4 +35,7 @@ return [
         'already' => '„:title“ ist bereits im Kopfmenü.',
         'added' => '„:title“ wurde ans Ende des Kopfmenüs gesetzt.',
     ],
+    'builder' => [
+        'label' => 'Menü',
+    ],
 ];

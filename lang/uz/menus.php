@@ -35,4 +35,7 @@ return [
         'already' => '«:title» allaqachon yuqori menyuda bor.',
         'added' => '«:title» yuqori menyu oxiriga qo\'shildi.',
     ],
+    'builder' => [
+        'label' => 'Menyu',
+    ],
 ];

@@ -35,4 +35,7 @@ return [
         'already' => '«:title» ya está en el menú superior.',
         'added' => '«:title» se ha añadido al final del menú superior.',
     ],
+    'builder' => [
+        'label' => 'Menú',
+    ],
 ];

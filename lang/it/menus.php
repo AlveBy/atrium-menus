@@ -35,4 +35,7 @@ return [
         'already' => '«:title» è già nel menu principale.',
         'added' => '«:title» è stato aggiunto in fondo al menu principale.',
     ],
+    'builder' => [
+        'label' => 'Menu',
+    ],
 ];

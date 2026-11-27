@@ -9,10 +9,13 @@ declare(strict_types=1);
 
 namespace Atrium\Menus;
 
+use Atrium\Admin\Builder\BlockTypes;
 use Atrium\Admin\Facades\Hook;
+use Atrium\Admin\Hooks\Hooks;
 use Atrium\Admin\Modules\Modules;
 use Atrium\Admin\Support\RecordUrls;
 use Atrium\Menus\Actions\AddToHeaderMenu;
+use Atrium\Menus\Builder\MenuBlock;
 use Atrium\Menus\View\Components\Menu;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
@@ -46,6 +49,9 @@ final class MenusServiceProvider extends ServiceProvider
                 __DIR__.'/../lang' => $this->app->langPath('vendor/atrium-menus'),
             ], 'atrium-menus-lang');
         }
+
+        // Off while the module is not installed.
+        $this->app->make(Hooks::class)->register(BlockTypes::REGISTRY, 'menu', new MenuBlock, 80);
 
         // Required but not installed: no tables, so no menus to draw.
         if (! $this->app->make(Modules::class)->isInstalled(self::MODULE)) {

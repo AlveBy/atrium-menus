@@ -35,4 +35,7 @@ return [
         'already' => '« :title » est déjà dans le menu d’en-tête.',
         'added' => '« :title » est ajouté à la fin du menu d’en-tête.',
     ],
+    'builder' => [
+        'label' => 'Menu',
+    ],
 ];

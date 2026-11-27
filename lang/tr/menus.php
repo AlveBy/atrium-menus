@@ -35,4 +35,7 @@ return [
         'already' => '“:title” zaten üst menüde.',
         'added' => '“:title” üst menünün sonuna eklendi.',
     ],
+    'builder' => [
+        'label' => 'Menü',
+    ],
 ];

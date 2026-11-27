@@ -35,4 +35,7 @@ return [
         'already' => '“:title” is already in the header menu.',
         'added' => '“:title” is added to the end of the header menu.',
     ],
+    'builder' => [
+        'label' => 'Menu',
+    ],
 ];

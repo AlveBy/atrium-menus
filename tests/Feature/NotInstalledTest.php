@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Atrium\Menus\Tests\Feature;
 
+use Atrium\Admin\Builder\BlockTypes;
 use Atrium\Menus\Tests\Fixtures\Article;
 use Atrium\Menus\Tests\TestCase;
 use Illuminate\Support\Facades\Blade;
@@ -59,5 +60,13 @@ final class NotInstalledTest extends TestCase
         $this->menu('header', [$this->item('Shop', '/shop')]);
 
         $this->assertSame('before', Cache::get('atrium-menus:version'));
+    }
+
+    public function test_the_site_builder_does_not_offer_its_block(): void
+    {
+        $types = $this->app->make(BlockTypes::class);
+
+        $this->assertNull($types->get('menu'));
+        $this->assertArrayNotHasKey('menu', $types->all());
     }
 }

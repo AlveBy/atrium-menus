@@ -35,4 +35,7 @@ return [
         'already' => '„:title” jest już w górnym menu.',
         'added' => '„:title” dodano na koniec górnego menu.',
     ],
+    'builder' => [
+        'label' => 'Menu',
+    ],
 ];

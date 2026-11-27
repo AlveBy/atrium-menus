@@ -35,4 +35,7 @@ return [
         'already' => '“:title”已在顶部菜单中。',
         'added' => '已将“:title”添加到顶部菜单末尾。',
     ],
+    'builder' => [
+        'label' => '菜单',
+    ],
 ];
